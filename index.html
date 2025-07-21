@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>r4tur1 | Futuristic Portfolio</title>
+    <title>r4tur1 | Futuristic Developer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -11,6 +11,7 @@
             --secondary: #6c00ff;
             --dark: #0a0a14;
             --light: #e0e0e0;
+            --card-bg: rgba(20, 25, 50, 0.5);
         }
         
         * {
@@ -139,7 +140,7 @@
         
         /* Card Styles */
         .card {
-            background: rgba(20, 25, 50, 0.5);
+            background: var(--card-bg);
             border-radius: 15px;
             padding: 30px;
             margin-bottom: 30px;
@@ -159,6 +160,57 @@
             font-size: 1.8rem;
             margin-bottom: 15px;
             color: var(--primary);
+        }
+        
+        /* Project Card Styles */
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0, 247, 255, 0.1);
+        }
+        
+        .project-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .project-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .project-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary);
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background: rgba(0, 247, 255, 0.1);
+            border: 1px solid rgba(0, 247, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            background: rgba(0, 247, 255, 0.2);
+            transform: translateY(-3px);
         }
         
         /* Skills Grid */
@@ -225,6 +277,13 @@
                 top: 20px;
                 right: 20px;
             }
+            .project-card h3 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .project-links {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -238,7 +297,7 @@
     <div class="container">
         <header>
             <h1>r4tur1</h1>
-            <p class="tagline"> Automation Via Code </p>
+            <p class="tagline">Coding the Future, One Project at a Time</p>
         </header>
         
         <section id="about">
@@ -289,38 +348,89 @@
         
         <section id="projects">
             <div class="card">
-                <h2>Featured Projects</h2>
-                <div class="project">
-                    <h3>1. [r4tur1.github.io](r4tur1.github.io) (current repo)</h3>
-                    <p>This is my personal website and portfolio, which you are on righ now and it is hosted on GitHub Pages. I built this with HTML, CSS, and a bit of JavaScript to showcase my projects, write-ups, and anything else I want to share. It’s a simple, clean space that grows as I do—right now, it’s pretty basic, but I plan to expand it with more interactive features and blog posts soon!</p>
+                <h2>🚀 Featured Projects</h2>
+                
+                <!-- Personal Website -->
+                <div class="project-card">
+                    <h3><i class="fas fa-globe project-icon"></i> Personal Website & Portfolio</h3>
+                    <p>This is my digital home built with <strong>HTML, CSS, and JavaScript</strong> and hosted on GitHub Pages. It's where I showcase my coding journey, projects, and ideas. Currently minimalist but always evolving - next up: interactive elements and a dev blog!</p>
+                    <div class="project-links">
+                        <a href="https://r4tur1.github.io" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/r4tur1/r4tur1.github.io" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
                 </div>
-                <div class="project">
-                    <h3>[X-Monitor](https://r4tur1.github.io/X-Monitor/)</h3>
-                    <p>A Python tool I created to monitor system and network activity. I wanted something lightweight that could track processes, log performance, or even alert me about unusual behavior. It’s still a work in progress, but the goal is to make it a customizable dashboard for keeping an eye on my machines. Great for learning about automation, data logging, and security.</p>
+                
+                <!-- X-Monitor -->
+                <div class="project-card">
+                    <h3><i class="fas fa-desktop project-icon"></i> X-Monitor</h3>
+                    <p>My <strong>Python-powered system monitor</strong> that tracks processes, logs performance metrics, and alerts about anomalies. Perfect for keeping my machines in check while learning about automation and cybersecurity. <em>Current mission:</em> Building a sleek dashboard interface.</p>
+                    <div class="project-links">
+                        <a href="https://r4tur1.github.io/X-Monitor/" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/r4tur1/X-Monitor" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
                 </div>
-                <div class="project">
-                    <h3>[Bubble-Crossing](https://r4tur1.github.io/Bubble-Crossing/)</h3>
-                    <p>A fun little JavaScript game I made, inspired by endless runners like Crossy Road—but with a bubble-themed twist! The idea was to practice game mechanics, collision detection, and DOM manipulation while creating something playful. It’s not super polished yet, but I had a blast working on it, and I might add more levels or power-ups later.</p>
+                
+                <!-- Bubble-Crossing -->
+                <div class="project-card">
+                    <h3><i class="fas fa-gamepad project-icon"></i> Bubble-Crossing</h3>
+                    <p>A whimsical <strong>JavaScript arcade game</strong> with bubble-hopping mechanics! Created to master DOM manipulation and game physics. Features include colorful bubble obstacles, score tracking, and responsive controls. <em>Next level:</em> Adding power-ups and special effects!</p>
+                    <div class="project-links">
+                        <a href="https://r4tur1.github.io/Bubble-Crossing/" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/r4tur1/Bubble-Crossing" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
                 </div>
-                <div class="project">
-                    <h3>[PokeDex](https://r4tur1.github.io/PokeDex)</h3>
-                    <p>As a Pokémon fan, I built this interactive Pokédex using the PokeAPI. It lets you search for Pokémon, see their stats, types, and abilities—basically a digital encyclopedia for trainers. I focused on making it clean, responsive, and easy to use. Working with APIs was a great learning experience, and I’m thinking of adding features like shiny forms or move-sets next.</p>
+                
+                <!-- PokeDex -->
+                <div class="project-card">
+                    <h3><i class="fas fa-paw project-icon"></i> PokeDex</h3>
+                    <p>A <strong>live Pokédex</strong> powered by PokeAPI that lets you search 800+ Pokémons (for now only gen 1 availabe 151 pokemons), view detailed stats and abilities, and explore type matchups. Built to practice API integration and responsive design. <em>Coming soon:</em> Shiny variants and battle simulator!</p>
+                    <div class="project-links">
+                        <a href="https://r4tur1.github.io/PokeDex" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/r4tur1/PokeDex" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
                 </div>
-                <div class="project">
-                    <h3>[Pokinfo](https://r4tur1.github.io/Pokinfo)</h3>
-                    <p>This is my second Pokémon-related project, but with a deeper dive into data. While PokeDex is more visual, Pokinfo is about detailed analysis—maybe type matchups, evolution trees, or competitive stats. I’m still experimenting with it, but the goal is to make it a useful tool for players who love crunching numbers and strategizing.</p>
+                
+                <!-- Pokinfo -->
+                <div class="project-card">
+                    <h3><i class="fas fa-chart-bar project-icon"></i> Pokinfo</h3>
+                    <p>The data nerd's companion to my Pokédex! Digs deeper into type effectiveness charts, evolution pathways, and competitive stats. While PokeDex is visual, Pokinfo is all about <strong>data analysis</strong>. <em>In development:</em> Team builder and move optimizer!</p>
+                    <div class="project-links">
+                        <a href="https://r4tur1.github.io/Pokinfo" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/r4tur1/Pokinfo" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
         
         <section id="contact">
             <div class="card">
-                <h2>Get In Touch</h2>
-                <p>Interested in collaborating or have questions about my work?</p>
+                <h2>💌 Get In Touch</h2>
+                <p>Interested in collaborating or have questions about my work? I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
                 <div class="social-links">
-                    <a href="https://github.com/r4tur1" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://discord.com/users/888010577170022400" target="_blank" title="_monkeyxdxluffy_"><i class="fab fa-discord"></i></a>
-                    <a href="https://www.instagram.com/r4tur1/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/r4tur1" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://discord.com/users/888010577170022400" target="_blank" title="Discord: _monkeyxdxluffy_"><i class="fab fa-discord"></i></a>
+                    <a href="https://www.instagram.com/r4tur1/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:your-email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </section>
