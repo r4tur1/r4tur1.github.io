@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>r4tur1 - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <!-- ═══════════════════════════════════════════
+         THEME TRANSITION OVERLAY
+    ═══════════════════════════════════════════ -->
+    <div class="theme-overlay" id="themeOverlay">
+      <!-- Jungle leaves animation (midnight → forest) -->
+      <div class="jungle-layer" id="jungleLayer">
+        <div class="leaf leaf-1">🌿</div>
+        <div class="leaf leaf-2">🍃</div>
+        <div class="leaf leaf-3">🌱</div>
+        <div class="leaf leaf-4">🍃</div>
+        <div class="leaf leaf-5">🌿</div>
+        <div class="leaf leaf-6">🍃</div>
+        <div class="leaf leaf-7">🌱</div>
+        <div class="leaf leaf-8">🌿</div>
+        <div class="jungle-vines"></div>
+        <div class="jungle-fill"></div>
+      </div>
+      <!-- Bubble animation (forest → midnight) -->
+      <div class="bubble-layer" id="bubbleLayer">
+        <div class="water-fill"></div>
+        <span class="bubble" style="width:20px;height:20px;left:8%"></span>
+        <span class="bubble" style="width:40px;height:40px;left:18%"></span>
+        <span class="bubble" style="width:15px;height:15px;left:28%"></span>
+        <span class="bubble" style="width:55px;height:55px;left:38%"></span>
+        <span class="bubble" style="width:25px;height:25px;left:48%"></span>
+        <span class="bubble" style="width:35px;height:35px;left:57%"></span>
+        <span class="bubble" style="width:18px;height:18px;left:67%"></span>
+        <span class="bubble" style="width:45px;height:45px;left:74%"></span>
+        <span class="bubble" style="width:22px;height:22px;left:82%"></span>
+        <span class="bubble" style="width:30px;height:30px;left:89%"></span>
+        <span class="bubble" style="width:12px;height:12px;left:43%"></span>
+        <span class="bubble" style="width:60px;height:60px;left:60%"></span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+    ═══════════════════════════════════════════ -->
+    <nav class="nav" id="nav">
+      <div class="nav__inner">
+        <!-- Logo slot -->
+        <a href="#hero" class="nav__logo" aria-label="Home">
+          <div class="logo-slot" id="logoSlot">
+            <span class="logo-slot__text">r4tur1</span>
+          </div>
+        </a>
+
+        <!-- Nav links -->
+        <ul class="nav__links">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+
+        <!-- Theme toggle -->
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Toggle theme"
+          title="Switch theme"
+        >
+          <span class="theme-toggle__track">
+            <span class="theme-toggle__thumb"></span>
+            <span class="theme-toggle__icon theme-toggle__icon--moon">🌙</span>
+            <span class="theme-toggle__icon theme-toggle__icon--leaf">🌿</span>
+          </span>
+          <span class="theme-toggle__label" id="themeLabel">Forest</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg-grid"></div>
+      <div class="hero__noise"></div>
+
+      <div class="hero__inner container">
+        <div class="hero__eyebrow">
+          <span class="tag">Available for learning & collaboration</span>
+        </div>
+
+        <h1 class="hero__name">
+          <span class="hero__name-line" data-reveal>Aaditya</span>
+          <span class="hero__name-line hero__name-line--accent" data-reveal>Raturi</span>
+        </h1>
+
+        <p class="hero__handle" data-reveal>
+          <span class="dm-mono">~/</span>
+          <span class="dm-mono accent">r4tur1</span>
+        </p>
+
+        <p class="hero__tagline" data-reveal>
+          Aspiring Developer &mdash; Learning to Build<br />
+          Clean &amp; Functional Web Experiences
+        </p>
+
+        <p class="hero__sub" data-reveal>
+          Fresh out of school. Serious about code. Building in public.
+        </p>
+
+        <div class="hero__cta" data-reveal>
+          <a href="#projects" class="btn btn--primary">View Projects</a>
+          <a href="#contact" class="btn btn--ghost">Contact</a>
+        </div>
+      </div>
+
+      <div class="hero__scroll-hint">
+        <span class="scroll-line"></span>
+        <span class="dm-mono scroll-text">scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-label">
+          <span class="dm-mono">01 /</span>
+          <span>About</span>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__heading-col">
+            <h2 class="section-heading">Who<br />I am.</h2>
+          </div>
+
+          <div class="about__content-col">
+            <p class="about__para">
+              I just finished 12th grade with Physics, Chemistry, Math, Computer Science,
+              and English. While most students my age are figuring out what to do next,
+              I already know — I want to build things with code.
+            </p>
+            <p class="about__para">
+              My journey started with <strong>Python</strong> and <strong>SQL</strong>,
+              and now I'm learning the fundamentals of the web: HTML, CSS, and
+              JavaScript. This portfolio is literally my first public project — a
+              deliberate choice to build in public and be accountable to my own growth.
+            </p>
+            <p class="about__para">
+              I'm not pretending to be senior-level. I'm here to be honest about where
+              I am, consistent about improving, and serious about the craft.
+            </p>
+
+            <div class="about__stats">
+              <div class="stat">
+                <span class="stat__value dm-mono">2026</span>
+                <span class="stat__label">Completed 12th Grade</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value dm-mono">#1</span>
+                <span class="stat__label">First Public Project</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value dm-mono">∞</span>
+                <span class="stat__label">Things to Learn</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SKILLS SECTION
+    ═══════════════════════════════════════════ -->
+<div class="skill-card skill-card--comfortable">
+            <div class="skill-card__top">
+              <span class="skill-card__icon">
+                <!-- Python official logo -->
+                <svg viewBox="0 0 256 255" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="py-a" x1="12.959%" x2="79.639%" y1="12.039%" y2="78.201%">
+                      <stop offset="0%" stop-color="#387EB8"/>
+                      <stop offset="100%" stop-color="#366994"/>
+                    </linearGradient>
+                    <linearGradient id="py-b" x1="19.128%" x2="90.742%" y1="20.579%" y2="88.429%">
+                      <stop offset="0%" stop-color="#FFE052"/>
+                      <stop offset="100%" stop-color="#FFC331"/>
+                    </linearGradient>
+                  </defs>
+                  <path fill="url(#py-a)" d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.202 63.097 36.202 63.097h21.573v-30.356s-1.164-36.202 35.588-36.202h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13z"/>
+                  <path fill="url(#py-b)" d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.202-63.096-36.202-63.096h-21.573v30.355s1.164 36.202-35.588 36.202h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.905 62.43 33.905zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z"/>
+                </svg>
+              </span>
+              <span class="skill-card__badge badge--comfortable">Comfortable</span>
+            </div>
+            <h3 class="skill-card__name">Python</h3>
+            <p class="skill-card__desc">
+              Core language. Variables, loops, functions, basic OOP, file I/O.
+              Used for scripting and problem-solving practice.
+            </p>
+            <div class="skill-card__bar">
+              <div class="skill-card__fill" style="--fill: 65%"></div>
+            </div>
+          </div>
+
+          <div class="skill-card skill-card--comfortable">
+            <div class="skill-card__top">
+              <span class="skill-card__icon">
+                <!-- SQL / Database icon -->
+                <svg viewBox="0 0 24 24" width="28" height="28" xmlns="http://www.w3.org/2000/svg" fill="none">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" stroke="#00758F" stroke-width="1.8" fill="#00758F" fill-opacity="0.15"/>
+                  <path d="M3 5v4c0 1.657 4.03 3 9 3s9-1.343 9-3V5" stroke="#00758F" stroke-width="1.8" fill="none"/>
+                  <path d="M3 9v4c0 1.657 4.03 3 9 3s9-1.343 9-3V9" stroke="#00758F" stroke-width="1.8" fill="none"/>
+                  <path d="M3 13v4c0 1.657 4.03 3 9 3s9-1.343 9-3v-4" stroke="#00758F" stroke-width="1.8" fill="none"/>
+                </svg>
+              </span>
+              <span class="skill-card__badge badge--comfortable">Comfortable</span>
+            </div>
+            <h3 class="skill-card__name">SQL</h3>
+            <p class="skill-card__desc">
+              Queries, joins, aggregations. Comfortable reading and writing
+              structured data. Studied as part of Computer Science coursework.
+            </p>
+            <div class="skill-card__bar">
+              <div class="skill-card__fill" style="--fill: 60%"></div>
+            </div>
+          </div>
+
+          <div class="skill-card skill-card--learning">
+            <div class="skill-card__top">
+              <span class="skill-card__icon">
+                <!-- HTML5 official logo -->
+                <svg viewBox="0 0 512 512" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#E34F26" d="M71 460 30 0h452l-41 460-185 52z"/>
+                  <path fill="#EF652A" d="M256 472l149-41 35-394H256z"/>
+                  <path fill="#fff" d="M256 208h-75l-5-58h80V94H114l13 150h129zm0 147-63-17-4-46h-56l8 89 115 32z"/>
+                  <path fill="#ebebeb" d="M256 208v56h70l-7 73-63 17v59l116-32 9-97 9-76zm0-114v56h137l5-56z"/>
+                </svg>
+              </span>
+              <span class="skill-card__badge badge--learning">Learning</span>
+            </div>
+            <h3 class="skill-card__name">HTML</h3>
+            <p class="skill-card__desc">
+              Semantic markup, document structure, accessibility basics.
+              This site is built with it — that's proof of progress.
+            </p>
+            <div class="skill-card__bar">
+              <div class="skill-card__fill" style="--fill: 45%"></div>
+            </div>
+          </div>
+
+          <div class="skill-card skill-card--learning">
+            <div class="skill-card__top">
+              <span class="skill-card__icon">
+                <!-- CSS3 official logo -->
+                <svg viewBox="0 0 512 512" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#1572B6" d="M71 460 30 0h452l-41 460-185 52z"/>
+                  <path fill="#33A9DC" d="M256 472l149-41 35-394H256z"/>
+                  <path fill="#fff" d="M256 208H140l5 57h111zm0-114H115l5 57h136zm0 261-59-16-4-45H137l8 89 111 31z"/>
+                  <path fill="#ebebeb" d="M256 208v57h106l-10 114-96 26v59l115-32 85-224zm0-114v57h137l5-57z"/>
+                </svg>
+              </span>
+              <span class="skill-card__badge badge--learning">Learning</span>
+            </div>
+            <h3 class="skill-card__name">CSS</h3>
+            <p class="skill-card__desc">
+              Layouts, Flexbox, Grid, custom properties, transitions.
+              Actively learning how to make interfaces that actually look good.
+            </p>
+            <div class="skill-card__bar">
+              <div class="skill-card__fill" style="--fill: 40%"></div>
+            </div>
+          </div>
+
+          <div class="skill-card skill-card--learning">
+            <div class="skill-card__top">
+              <span class="skill-card__icon">
+                <!-- JavaScript official logo -->
+                <svg viewBox="0 0 256 256" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="256" height="256" fill="#F7DF1E" rx="8"/>
+                  <path d="M67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371 7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259-19.245 0-30.416-9.967-36.086-21.994M152.381 211.354l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607 9.969 0 16.325-4.984 16.325-11.858 0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.389-28.876-16.668-28.876-36.258 0-18.044 13.748-31.792 35.229-31.792 15.294 0 26.292 5.328 34.196 19.247l-18.731 12.029c-4.125-7.389-8.591-10.31-15.465-10.31-7.046 0-11.514 4.468-11.514 10.31 0 7.217 4.468 10.139 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804 0 21.654-17.012 33.51-39.867 33.51-22.339 0-36.774-10.654-43.814-24.573"/>
+                </svg>
+              </span>
+              <span class="skill-card__badge badge--learning">Learning</span>
+            </div>
+            <h3 class="skill-card__name">JavaScript</h3>
+            <p class="skill-card__desc">
+              DOM manipulation, events, basic logic. Early days — but I can
+              already write the interactivity on this very page.
+            </p>
+            <div class="skill-card__bar">
+              <div class="skill-card__fill" style="--fill: 30%"></div>
+            </div>
+          </div>
+
+          <div class="skill-card skill-card--next">
+            <div class="skill-card__top">
+              <span class="skill-card__icon">
+                <!-- Git official logo -->
+                <svg viewBox="0 0 256 256" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#F05032" d="M251.17 116.6L139.4 4.82a16.49 16.49 0 0 0-23.31 0l-23.21 23.21 29.44 29.44a19.57 19.57 0 0 1 24.8 24.96l28.37 28.38a19.6 19.6 0 1 1-11.75 11.06L137.28 95.4v69.64a19.62 19.62 0 1 1-16.14-.57V94.2a19.61 19.61 0 0 1-10.65-25.73L81.19 39.16 4.83 115.52a16.49 16.49 0 0 0 0 23.32L116.6 250.6a16.49 16.49 0 0 0 23.31 0l111.26-111.26a16.5 16.5 0 0 0 0-23.74"/>
+                </svg>
+              </span>
+              <span class="skill-card__badge badge--next">Up Next</span>
+            </div>
+            <h3 class="skill-card__name">Git & GitHub</h3>
+            <p class="skill-card__desc">
+              Version control, commits, pushing to repositories. Learning as
+              I host this site on GitHub Pages.
+            </p>
+            <div class="skill-card__bar">
+              <div class="skill-card__fill" style="--fill: 20%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PROJECTS SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section-label">
+          <span class="dm-mono">03 /</span>
+          <span>Projects</span>
+        </div>
+
+        <h2 class="section-heading">What I've<br />built.</h2>
+
+        <div class="projects__grid">
+
+          <!-- Project 01 — This portfolio -->
+          <article class="project-card project-card--featured">
+            <div class="project-card__header">
+              <span class="project-card__number dm-mono">01</span>
+              <div class="project-card__links">
+                <a
+                  href="https://github.com/r4tur1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-card__link"
+                  aria-label="View on GitHub"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+                <a
+                  href="https://r4tur1.github.io/"
+                  class="project-card__link project-card__link--external"
+                  aria-label="Live site"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15 3 21 3 21 9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card__body">
+              <h3 class="project-card__title">Portfolio v1.0 (You are currently viewing it!)</h3>
+              <p class="project-card__desc">
+                This website. My first public project, built entirely from scratch
+                without templates or frameworks. Every line of HTML, CSS, and JavaScript
+                written by hand while learning the fundamentals.
+              </p>
+              <p class="project-card__desc">
+                It felt important to make the first thing I build publicly be
+                something I'm proud of — not just a "hello world."
+              </p>
+            </div>
+
+            <div class="project-card__footer">
+              <div class="project-card__tags">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">GitHub Pages</span>
+              </div>
+              <span class="project-card__status dm-mono">Live ↗</span>
+            </div>
+          </article>
+
+          <!-- Placeholder 02 -->
+          <article class="project-card project-card--placeholder">
+            <div class="project-card__header">
+              <span class="project-card__number dm-mono">02</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Next Project</h3>
+              <p class="project-card__desc">
+                Something is being built. Check back soon — or watch the GitHub.
+              </p>
+            </div>
+            <div class="project-card__footer">
+              <span class="project-card__status dm-mono project-card__status--pending">In Progress…</span>
+            </div>
+          </article>
+
+          <!-- Placeholder 03 -->
+          <article class="project-card project-card--placeholder">
+            <div class="project-card__header">
+              <span class="project-card__number dm-mono">03</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Future Project</h3>
+              <p class="project-card__desc">
+                Ideas forming. Python, web, or something entirely different —
+                whatever teaches me the most.
+              </p>
+            </div>
+            <div class="project-card__footer">
+              <span class="project-card__status dm-mono project-card__status--pending">Coming Soon</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-label">
+          <span class="dm-mono">04 /</span>
+          <span>Contact</span>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact__left">
+            <h2 class="section-heading">Let's<br />connect.</h2>
+            <p class="contact__sub">
+              Open to learning opportunities, collaborations, or just a
+              conversation about tech and code.
+            </p>
+
+            <div class="contact__socials">
+              <a
+                href="https://github.com/r4tur1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+              >
+                <span class="social-link__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </span>
+                <span class="social-link__info">
+                  <span class="social-link__label">GitHub</span>
+                  <span class="social-link__handle dm-mono">r4tur1</span>
+                </span>
+                <span class="social-link__arrow">↗</span>
+              </a>
+
+              <a
+                href="https://linkedin.com/in/r4tur1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+              >
+                <span class="social-link__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </span>
+                <span class="social-link__info">
+                  <span class="social-link__label">LinkedIn</span>
+                  <span class="social-link__handle dm-mono">Aaditya Raturi</span>
+                </span>
+                <span class="social-link__arrow">↗</span>
+              </a>
+
+              <a
+                href="https://x.com/r4tur1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+              >
+                <span class="social-link__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </span>
+                <span class="social-link__info">
+                  <span class="social-link__label">X (Twitter)</span>
+                  <span class="social-link__handle dm-mono">@r4tur1</span>
+                </span>
+                <span class="social-link__arrow">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact__right">
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-group">
+                <label class="form-label dm-mono" for="name">Name</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  autocomplete="name"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label dm-mono" for="email">Email</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  autocomplete="email"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label dm-mono" for="message">Message</label>
+                <textarea
+                  class="form-input form-textarea"
+                  id="message"
+                  name="message"
+                  placeholder="What's on your mind?"
+                  rows="5"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">
+                Send Message
+              </button>
+              <p class="form-note dm-mono" id="formNote"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span class="dm-mono footer__copy">© r4tur1 — 2026</span>
+        <span class="footer__built">
+          Built by <span class="accent">Aaditya Raturi</span>
+        </span>
+        <a href="#hero" class="footer__back dm-mono">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
