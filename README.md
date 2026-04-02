@@ -16,12 +16,15 @@ I just finished 12th grade (PCM + Computer Science) and I am learning frontend d
 
 ---
 
-## What will be Inside
+## What is Inside
 
 ```
 r4tur1.github.io/
-├── index.html          # The entire site — HTML, CSS, and JS in one file
+├── index.html          # Contains HTML
+├── style.css           # Contains CSS
+├── script.js           # Contains JS
 ├── README.md           # This file
+├── Logo.png            # Logo 
 ├── LICENSE             # MIT License
 
 ```
@@ -36,20 +39,16 @@ r4tur1.github.io/
 | About     | Honest background — who I am and where I'm starting     |
 | Skills    | Python, SQL, HTML, CSS, JavaScript — with honest levels |
 | Projects  | Current and upcoming work                               |
-| Contact   | GitHub, LinkedIn, X, and a simple contact form          |
+| Contact   | GitHub, LinkedIn, X, and contact form (Formspree        |
 
 ---
 
 ## Design System
 
-The site will follow a strict **black-and-white** aesthetic.
+The site has 2 themes available **Forest** and **Midnight** aesthetic.
 
 | Token         | Value                          |
 |---------------|--------------------------------|
-| Background    | `#000000`                      |
-| Foreground    | `#ffffff`                      |
-| Muted text    | `#999999`                      |
-| Borders       | `#222222`                      |
 | Display font  | DM Serif Display (Google Fonts)|
 | Body font     | Syne (Google Fonts)            |
 | Mono font     | DM Mono (Google Fonts)         |
@@ -67,30 +66,9 @@ The site will follow a strict **black-and-white** aesthetic.
 
 ---
 
-## Running Locally
-
-This will be a static site. No build step needed.
-
-```bash
-# Clone the repo
-git clone https://github.com/r4tur1/r4tur1.github.io.git
-
-# Open in browser
-open index.html
-
-# Or use a local dev server (optional but recommended)
-npx serve .
-# or
-python3 -m http.server 3000
-```
-
-Then visit `http://localhost:3000` (or just open `index.html` directly).
-
----
-
 ## Deployment
 
-This site will be deployed via **GitHub Pages**.
+This site is deployed via **GitHub Pages**.
 
 **Steps to deploy your own fork:**
 
@@ -106,15 +84,15 @@ This site will be deployed via **GitHub Pages**.
 
 - [X] Add description about project
 - [X] Add readme and future goals 
-- [ ] Portfolio v1 — initial release
-- [ ] Add more projects as they're built
-- [ ] Dark/light toggle (stretch goal)
-- [ ] Contact form backend (Formspree or similar)
+- [X] Portfolio v1 — initial release
+- [X] Theme toggle (Forest and Midnight)
+- [ ] Smooth animations and cool effects when changing themes
 - [ ] Performance audit and optimisation
+- [ ] Add more projects as they're built
 
 ---
 
-## Skills that will be reflected in this project
+## Skills reflected in this project
 
 | Skills       | Implemented for                              |
 |-------------|-----------------------------------------------|
@@ -128,12 +106,12 @@ This site will be deployed via **GitHub Pages**.
 ## License
 
 MIT — see [`LICENSE`](./LICENSE) for details.  
-Feel free to use this as a reference or starting point. Credit appreciated but not required.
+Feel free to use this as a reference or starting point. Credit appreciated .... 
+Thankyouu please leave a star if you like it !!
 
 ---
 
 ## Contact
-
 - GitHub: [@r4tur1](https://github.com/r4tur1)
 - X / Twitter: [@r4tur1](https://twitter.com/r4tur1)
 - LinkedIn: [Aadtya Raturi](https://linkedin.com)
