@@ -182,14 +182,28 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .btn--primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), rgba(200, 145, 74, 0.8));
   color: #fff;
   border: 1px solid var(--accent);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
 }
 
 .btn--primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px var(--accent-glow);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 40px var(--accent-glow), inset 0 0 20px rgba(255,255,255,0.1);
 }
 
 .btn--ghost {
@@ -254,14 +268,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   height: 44px;
   border: 1px solid var(--border-accent);
   border-radius: var(--radius-sm);
-  background: var(--accent-soft);
+  background: linear-gradient(135deg, var(--accent-soft), rgba(200, 145, 74, 0.15));
   transition: all var(--transition-mid);
   overflow: hidden;
+  position: relative;
 }
 
 .logo-slot:hover {
   border-color: var(--accent);
-  box-shadow: 0 0 12px var(--accent-glow);
+  box-shadow: 0 0 20px var(--accent-glow), inset 0 0 15px rgba(200, 145, 74, 0.2);
+  transform: scale(1.08);
 }
 
 .logo-slot__text {
@@ -355,7 +371,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 0.4rem 0.8rem;
   border: 1px solid var(--border);
   border-radius: 99px;
-  background: var(--bg-elevated);
+  background: linear-gradient(135deg, var(--bg-elevated), rgba(200, 145, 74, 0.08));
   color: var(--text-muted);
   font-size: 0.75rem;
   font-family: var(--font-mono);
@@ -363,9 +379,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: all var(--transition-mid);
   cursor: pointer;
   flex-shrink: 0;
+  position: relative;
 }
 
-.theme-toggle:hover { border-color: var(--border-accent); color: var(--text); }
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  box-shadow: 0 0 15px rgba(200, 145, 74, 0.3);
+}
 
 .theme-toggle__track {
   position: relative;
@@ -531,6 +552,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   opacity: 0.35;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  animation: float-slow 20s ease-in-out infinite;
 }
 
 .hero__noise {
@@ -548,7 +570,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding-bottom: 6rem;
 }
 
-.hero__eyebrow { margin-bottom: 2rem; animation: fade-up 0.8s 0.1s both; }
+.hero__eyebrow { margin-bottom: 2rem; animation: fade-up 0.8s 0.1s both, glow-pulse 3s 1.2s infinite; }
 
 .hero__name {
   font-family: var(--font-display);
@@ -562,7 +584,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-direction: column;
 }
 
-.hero__name-line { display: block; animation: fade-up 0.9s both; }
+.hero__name-line { display: block; animation: fade-up 0.9s both; text-shadow: 0 0 30px rgba(200, 145, 74, 0.3); }
 .hero__name-line:nth-child(2) { animation-delay: 0.08s; }
 .hero__name-line--accent { color: var(--accent); }
 
@@ -613,7 +635,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 0.65rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  animation: fade-up 1s 1s both;
+  animation: fade-up 1s 1s both, float-medium 4s 2s infinite ease-in-out;
 }
 
 .scroll-line {
@@ -688,7 +710,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .skill-card {
-  background: var(--bg-card);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(200, 145, 74, 0.05) 100%);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 1.6rem;
@@ -696,7 +718,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-direction: column;
   gap: 0.8rem;
   transition: transform var(--transition-mid), border-color var(--transition-mid),
-              box-shadow var(--transition-mid);
+              box-shadow var(--transition-mid), background var(--transition-mid);
   position: relative;
   overflow: hidden;
 }
@@ -715,9 +737,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .skill-card--next::before        { background: radial-gradient(circle at 80% 20%, var(--badge-next-bg), transparent 60%); }
 
 .skill-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-accent);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 20px 60px var(--accent-glow), inset 0 0 20px rgba(200, 145, 74, 0.1);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(200, 145, 74, 0.15) 100%);
 }
 
 .skill-card:hover::before { opacity: 1; }
@@ -790,9 +813,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .skill-card__fill {
   height: 100%;
   width: var(--fill, 0%);
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--accent), rgba(200, 145, 74, 0.6));
   border-radius: 99px;
   transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 15px var(--accent-glow);
+  position: relative;
+}
+
+.skill-card__fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 2s infinite;
+  border-radius: 99px;
 }
 
 /* ─── 10. PROJECTS SECTION ───────────────────────────── */
@@ -807,7 +841,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .project-card {
-  background: var(--bg-card);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(200, 145, 74, 0.03) 100%);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 1.8rem;
@@ -815,13 +849,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-direction: column;
   gap: 1.2rem;
   transition: transform var(--transition-mid), border-color var(--transition-mid),
-              box-shadow var(--transition-mid);
+              box-shadow var(--transition-mid), background var(--transition-mid);
+  position: relative;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-accent);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+  transform: translateY(-8px) scale(1.01);
+  border-color: var(--accent);
+  box-shadow: 0 24px 64px var(--accent-glow), inset 0 0 20px rgba(200, 145, 74, 0.08);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(200, 145, 74, 0.1) 100%);
 }
 
 .project-card--featured { border-color: var(--border-accent); position: relative; overflow: hidden; }
@@ -927,14 +963,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 1rem 1.2rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  background: var(--bg-card);
+  background: linear-gradient(135deg, var(--bg-card), rgba(200, 145, 74, 0.04));
   transition: all var(--transition-mid);
+  position: relative;
 }
 
 .social-link:hover {
-  border-color: var(--border-accent);
-  transform: translateX(4px);
-  background: var(--bg-elevated);
+  border-color: var(--accent);
+  transform: translateX(6px) translateY(-2px);
+  background: linear-gradient(135deg, var(--bg-elevated), rgba(200, 145, 74, 0.12));
+  box-shadow: 0 8px 24px var(--accent-glow);
 }
 
 .social-link__icon {
@@ -944,9 +982,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: 40px;
   height: 40px;
   border-radius: var(--radius-sm);
-  background: var(--accent-soft);
+  background: linear-gradient(135deg, var(--accent-soft), rgba(200, 145, 74, 0.2));
   color: var(--accent);
   flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-link__icon {
+  transform: scale(1.15) rotate(5deg);
 }
 
 .social-link__info { display: flex; flex-direction: column; gap: 0.1rem; flex: 1; }
@@ -1034,6 +1077,41 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ─── 13. ANIMATIONS & KEYFRAMES ─────────────────────── */
 
+/* Parallax and floating animations */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px var(--accent-glow), inset 0 0 20px rgba(0,0,0,0.3); }
+  50% { box-shadow: 0 0 40px var(--accent-glow), inset 0 0 30px rgba(0,0,0,0.2); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes tech-glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1043,10 +1121,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: blur(4px);
 }
 
-[data-reveal].revealed { opacity: 1; transform: translateY(0); }
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
 
 [data-reveal]:nth-child(2) { transition-delay: 0.08s; }
 [data-reveal]:nth-child(3) { transition-delay: 0.16s; }

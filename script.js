@@ -34,8 +34,8 @@ const THEMES = {
 };
 
 function getStoredTheme() {
-  try { return localStorage.getItem('r4tur1-theme') || 'midnight'; }
-  catch { return 'midnight'; }
+  try { return localStorage.getItem('r4tur1-theme') || 'forest'; }
+  catch { return 'forest'; }
 }
 
 function storeTheme(theme) {
