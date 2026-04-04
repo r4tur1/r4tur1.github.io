@@ -89,6 +89,9 @@ This site is deployed via **GitHub Pages**.
 - [ ] Smooth animations and cool effects when changing themes
 - [ ] Performance audit and optimisation
 - [ ] Add more projects as they're built
+- [ ] Implement a custom blog section using Markdown
+- [ ] Integrate a dynamic dark/light mode based on system settings
+- [ ] Add a contact form with backend integration (e.g., Formspree or custom API)
 
 ---
 
