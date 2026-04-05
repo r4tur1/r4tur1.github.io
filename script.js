@@ -261,7 +261,10 @@ if (contactForm) {
 
     fetch('https://formspree.io/f/xvzvbvek', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
       body: JSON.stringify({ name, email, message }),
     })
       .then(res => {
