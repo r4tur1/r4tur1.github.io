@@ -272,7 +272,11 @@ if (contactForm) {
           showFormNote("Message sent! I'll get back to you soon.", 'success');
           contactForm.reset();
         } else {
-          showFormNote('Something went wrong. Try again.', 'error');
+          if (res.status === 403) {
+            showFormNote('Submission blocked. Please disable reCAPTCHA in Formspree settings for AJAX support.', 'error');
+          } else {
+            showFormNote('Something went wrong. Try again.', 'error');
+          }
         }
       })
       .catch(() => showFormNote('Network error. Try again.', 'error'))
