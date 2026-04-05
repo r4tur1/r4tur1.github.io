@@ -4,7 +4,6 @@
 
 **Live site → [r4tur1.github.io](https://r4tur1.github.io)** 
 
-(yet to be uploaded)
 
 ---
 
