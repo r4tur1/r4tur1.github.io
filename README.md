@@ -42,7 +42,7 @@ r4tur1.github.io/
 
 ---
 
-## Design System
+## Design System 
 
 The site has 2 themes available **Forest** and **Midnight** aesthetic.
 
