@@ -20,10 +20,10 @@ I just finished 12th grade (PCM + Computer Science) and I am learning frontend d
 ```
 r4tur1.github.io/
 ├── index.html          # Contains HTML
-├── style.css           # Contains CSS
-├── script.js           # Contains JS
+├── style.css           # Contains CSS (with enhanced animations)
+├── script.js           # Contains JS (with improved interactivity)
 ├── README.md           # This file
-├── Logo.png            # Logo 
+├── logo.png            # Logo 
 ├── LICENSE             # MIT License
 
 ```
@@ -48,8 +48,8 @@ The site has 2 themes available **Forest** and **Midnight** aesthetic.
 
 | Token         | Value                          |
 |---------------|--------------------------------|
-| Display font  | DM Serif Display (Google Fonts)|
-| Body font     | Syne (Google Fonts)            |
+| Display font  | Syne (Google Fonts)            |
+| Body font     | Instrument Sans (Google Fonts) |
 | Mono font     | DM Mono (Google Fonts)         |
 
 ---
@@ -57,11 +57,12 @@ The site has 2 themes available **Forest** and **Midnight** aesthetic.
 ## Tech Stack
 
 - **HTML5**
-- **CSS3**
-- **Vanilla JavaScript**
-- **Google Fonts**
+- **CSS3** (with advanced animations and transitions)
+- **Vanilla JavaScript** (with scroll reveal and micro-interactions)
+- **Google Fonts** (Syne, Instrument Sans, DM Mono)
 - **GitHub Pages**
-(I am yet to purchase my own domain ... Once I purchase it i will make it available there)
+- **Formspree** (for contact form backend)
+- **Responsive Design** (mobile-first approach)
 
 ---
 
@@ -85,19 +86,28 @@ This site is deployed via **GitHub Pages**.
 - [X] Add readme and future goals 
 - [X] Portfolio v1 — initial release
 - [X] Theme toggle (Forest and Midnight)
-- [ ] Smooth animations and cool effects when changing themes
+- [X] Smooth animations and cool effects when changing themes
+- [X] Contact form with backend integration (Formspree)
+- [X] Enhanced animations and micro-interactions
 - [ ] Performance audit and optimisation
 - [ ] Add more projects as they're built
 - [ ] Implement a custom blog section using Markdown
 - [ ] Integrate a dynamic dark/light mode based on system settings
-- [ ] Add a contact form with backend integration (e.g., Formspree or custom API)
 
 ---
+## Key Features
+
+- **Dual Theme System**: Forest and Midnight themes with smooth animated transitions
+- **Scroll Reveal Animations**: Staggered element reveals with blur-to-clear effect
+- **Micro-interactions**: Hover effects with glow animations and scale transforms
+- **Responsive Design**: Fully responsive layout for mobile, tablet, and desktop
+- **Contact Form**: Working form with validation and Formspree integration
+- **Performance Optimized**: Smooth animations with CSS transitions and requestAnimationFrame
 
 ## Skills reflected in this project
 
 | Skills       | Implemented for                              |
-|-------------|-----------------------------------------------|
+|-----------|-----------------------------------------------|
 | HTML        | Page structure, semantic elements, forms      |
 | CSS         | Layout, typography, animations, responsive    |
 | JavaScript  | Scroll detection, mobile nav, form handling   |

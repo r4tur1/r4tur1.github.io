@@ -106,32 +106,35 @@ let lastScroll = 0;
 window.addEventListener('scroll', () => {
   const currentScroll = window.scrollY;
 
-  // Add shadow / background opacity on scroll
+  // Add shadow / background opacity on scroll with smooth transition
   if (currentScroll > 40) {
-    nav.style.boxShadow = '0 2px 24px rgba(0,0,0,0.25)';
+    nav.style.boxShadow = '0 2px 24px rgba(0,0,0,0.35)';
   } else {
     nav.style.boxShadow = 'none';
   }
 
-  // Hide nav on scroll down, show on scroll up
+  // Hide nav on scroll down, show on scroll up with enhanced easing
   if (currentScroll > lastScroll && currentScroll > 120) {
     nav.style.transform = 'translateY(-100%)';
-    nav.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+    nav.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
   } else {
     nav.style.transform = 'translateY(0)';
+    nav.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
   }
 
   lastScroll = currentScroll;
 }, { passive: true });
 
 
-/* ─── 3. SCROLL REVEAL ─────────────────────────────── */
+//* ─── 3. SCROLL REVEAL ─────────────────────────── */
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
+        setTimeout(() => {
+          entry.target.classList.add('revealed');
+        }, index * 40);
         revealObserver.unobserve(entry.target);
       }
     });
@@ -139,10 +142,14 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
 );
 
+// Stagger reveals for visual effect
+let revealIndex = 0;
+
 // Observe section headings and content blocks
-document.querySelectorAll(
+const revealElements = document.querySelectorAll(
   '.section-heading, .about__para, .about__stats, .skill-card, .project-card, .social-link, .contact-form, .contact__sub'
-).forEach(el => {
+);
+revealElements.forEach((el, index) => {
   el.dataset.reveal = '';
   revealObserver.observe(el);
 });
@@ -158,19 +165,20 @@ document.querySelectorAll('[data-reveal]').forEach(el => {
 // Skill bars animate their width from 0 to --fill when they enter view
 const skillBarObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
         const fill = entry.target.querySelector('.skill-card__fill');
         if (fill) {
-          // Trigger animation by setting the property (CSS handles transition)
           const target = fill.style.getPropertyValue('--fill');
           fill.style.setProperty('--fill', '0%');
 
-          requestAnimationFrame(() => {
+          setTimeout(() => {
             requestAnimationFrame(() => {
-              fill.style.setProperty('--fill', target);
+              requestAnimationFrame(() => {
+                fill.style.setProperty('--fill', target);
+              });
             });
-          });
+          }, index * 60);
         }
         skillBarObserver.unobserve(entry.target);
       }
@@ -195,13 +203,13 @@ const skillCards = document.querySelectorAll('.skill-card');
 
 const skillBarObserver2 = new IntersectionObserver(
   (entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
         const fill = entry.target.querySelector('.skill-card__fill');
         if (fill && fill.dataset.targetFill) {
           setTimeout(() => {
             fill.style.setProperty('--fill', fill.dataset.targetFill);
-          }, 150);
+          }, 150 + index * 50);
         }
         skillBarObserver2.unobserve(entry.target);
       }
@@ -210,7 +218,9 @@ const skillBarObserver2 = new IntersectionObserver(
   { threshold: 0.2 }
 );
 
-skillCards.forEach(card => skillBarObserver2.observe(card));
+skillCards.forEach((card, index) => {
+  skillBarObserver2.observe(card);
+});
 
 
 /* ─── 5. CONTACT FORM ──────────────────────────────── */
@@ -247,17 +257,20 @@ if (contactForm) {
     // Validation
     if (!name || !email || !message) {
       showFormNote('Please fill in all fields.', 'error');
+      submitBtn.style.animation = 'pulse-glow 0.8s ease-in-out';
       return;
     }
 
     if (!isValidEmail(email)) {
       showFormNote('Please enter a valid email address.', 'error');
+      submitBtn.style.animation = 'pulse-glow 0.8s ease-in-out';
       return;
     }
 
-    // Send
+    // Send with enhanced feedback
     submitBtn.textContent = 'Sending…';
     submitBtn.disabled    = true;
+    submitBtn.style.animation = 'pulse-glow 1.5s ease-in-out';
 
     fetch('https://formspree.io/f/xvzvbvek', {
       method: 'POST',
@@ -283,6 +296,7 @@ if (contactForm) {
       .finally(() => {
         submitBtn.textContent = 'Send Message';
         submitBtn.disabled    = false;
+        submitBtn.style.animation = '';
       });
 
   }); // closes addEventListener
