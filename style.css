@@ -148,9 +148,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--accent-soft);
   border: 1px solid var(--border-accent);
   border-radius: 99px;
-  padding: 0.3rem 0.9rem;
-  letter-spacing: 0.06em;
+  padding: 0.35rem 1rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all var(--transition-mid);
+}
+
+.tag:hover {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 /* ─── 3. LAYOUT & CONTAINER ─────────────────────────── */
@@ -578,7 +587,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding-bottom: 6rem;
 }
 
-.hero__eyebrow { margin-bottom: 2rem; animation: fade-up 0.8s 0.1s both, glow-pulse 3s 1.2s infinite; }
+.hero__eyebrow { margin-bottom: 2rem; animation: fade-up 0.8s 0.1s both; }
 
 .hero__name {
   font-family: var(--font-display);
