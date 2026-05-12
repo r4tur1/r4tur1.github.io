@@ -2,7 +2,7 @@
 
 > A minimal, high end personal portfolio website built with HTML, CSS and JavaScript .
 
-**Live site → [r4tur1.github.io](https://r4tur1.github.io)** 
+**Live site → [r4tur1.is-a.dev](https://r4tur1.is-a.dev)** 
 
 
 ---
